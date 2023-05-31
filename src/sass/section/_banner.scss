@@ -1,0 +1,30 @@
+.banner {
+    &__top {
+        &-home {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            transition: all ease-in-out 400ms;
+            background-image: url('../../assets/images/e270fc8fc902a1eb738458e7b29c1899.jpeg');
+            height: 800px;
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            &::after {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                height: 900px;
+                background: white;
+                opacity: 0.5;
+                z-index: 1;
+                content: '';
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+@media screen and (min-width: 1241px) {
+    html {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+body {
+    margin: 0;
+    max-width: 1240px;
+    width: 100%;
+    height: auto;
+    font-family: 'Montserrat', sans-serif;
+}
