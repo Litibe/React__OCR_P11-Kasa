@@ -1,4 +1,4 @@
-@media screen and (min-width: 1241px) {
+@media screen and (min-width: 1441px) {
     html {
         display: flex;
         flex-direction: row;
@@ -6,8 +6,8 @@
     }
 }
 body {
-    margin: 0;
-    max-width: 1240px;
+    margin: 0 auto;
+    max-width: 1440px;
     width: 100%;
     height: auto;
     font-family: 'Montserrat', sans-serif;

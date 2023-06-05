@@ -1,5 +1,5 @@
 footer {
-    background-color: $color-primary;
+    background-color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -7,7 +7,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    max-width: 1240px;
+    max-width: 1440px;
     height: 209px;
     z-index: 999;
     color: white;
