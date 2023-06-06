@@ -5,19 +5,29 @@ header {
     align-items: center;
     margin-top: 40px;
     @include mobile {
-        margin: 20px;
-        width: 95%;
+        margin: 20px auto;
     }
 }
 
 .nav {
     display: flex;
     flex-direction: row;
+    position: relative;
+    right: 0;
+    @include tab {
+        margin: 20px;
+        right: 20px;
+    }
     &__link {
         color: $color-primary;
         font-size: 24px;
         line-height: 34px;
-        margin-left: 20px;
+        margin-left: 70px;
+        @include mobile {
+            font-size: 14px;
+            line-height: 17px;
+            margin-left: 20px;
+        }
         &:link {
             text-decoration: inherit;
         }

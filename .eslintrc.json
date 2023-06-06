@@ -13,9 +13,9 @@
         "no-underscore-dangle": "off",
         "no-unused-vars": "off",
         "no-undef": "off",
-        "indent": ["error", 4],
+        "indent": "off",
         "no-param-reassign": ["error", { "props": false }],
-        "no-console": "error",
+        "no-console": "off",
         "no-inner-declarations": "off",
         "operator-linebreak": "off",
         "comma-dangle": [

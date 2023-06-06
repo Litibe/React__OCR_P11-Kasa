@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import data from '../../data/logements.json';
 
 export default function useFetchGetAppartment() {
     const [dataAppartment, setData] = useState(undefined);
@@ -6,15 +7,19 @@ export default function useFetchGetAppartment() {
     useEffect(() => {
         setLoading(true);
         async function fetchData() {
+            /*
             try {
-                const response = await fetch('./data/photographers.json');
-                const data = await response.json();
-                setData(data.appartment);
+                const response = await fetch('');
+                const dataResponse = response.json();
+                setData(dataResponse.appartment);
                 setLoading(false);
                 return true;
             } catch {
                 return undefined;
-            }
+            } */
+            const dataResponse = data;
+            setData(dataResponse.appartment);
+            setLoading(false);
         }
         fetchData();
     }, []);
