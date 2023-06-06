@@ -1,0 +1,39 @@
+.carroussel-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: max-content;
+}
+
+.carroussel-button {
+    position: absolute;
+    top: 310px;
+    border: none;
+    background: transparent;
+    color: white;
+    width: min-content;
+    z-index: 2;
+    font-size: 46px;
+    margin-left: 15px;
+    cursor: pointer;
+    &:hover {
+        color: $color-primary;
+    }
+}
+.arrow-right {
+    position: absolute;
+    top: 310px;
+    right: 70px;
+}
+
+.pagination-carroussel {
+    text-align: center;
+    width: min-content;
+    margin: auto;
+    color: white;
+    transform: translateY(-40px);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+}

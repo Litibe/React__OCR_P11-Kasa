@@ -5,6 +5,7 @@ import GridAppartement from '../components/Appartment/GridAppartement.jsx';
 import Loading from '../components/Loading/Loading.jsx';
 import useFetchGetAppartment from '../utils/api/fetchAppartment.jsx';
 import NotationAppartement from '../components/Appartment/NotationAppartement.jsx';
+import Carrousel from '../components/Appartment/Carrousel.jsx';
 
 export default function Appartment() {
     const { dataAppartment, isLoadingAppartment } = useFetchGetAppartment();
@@ -28,12 +29,7 @@ export default function Appartment() {
         <main>
             {appartment !== undefined ? (
                 <>
-                    <img
-                        src={appartment.cover}
-                        className="appart__cover-banner"
-                        alt={appartment.title}
-                        loading="lazy"
-                    />
+                    <Carrousel appartment={appartment} />
                     <div className="appart">
                         <div className="appart__header-details">
                             <h1>{appartment.title}</h1>
