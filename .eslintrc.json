@@ -30,6 +30,8 @@
             }
         ],
         "prefer-template": "off",
-        "no-bitwise": "off"
+        "no-bitwise": "off",
+        "no-confusing-arrow": "off",
+        "function-paren-newline": "off"
     }
 }

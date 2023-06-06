@@ -77,3 +77,125 @@
         }
     }
 }
+.appart {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @include tab {
+        width: calc(100% - 40px);
+    }
+    @include mobile {
+        flex-direction: column;
+    }
+    &__cover-banner {
+        width: 100%;
+        height: 415px;
+        border-radius: 25px;
+        object-fit: cover;
+        margin-top: 20px;
+        @include tab {
+            height: 350px;
+            border-radius: 10px;
+            margin: 0;
+            width: calc(100% - 40px);
+        }
+        @include mobile {
+            width: $widthComponentWithMargin;
+        }
+    }
+    &__header {
+        &-details {
+            & h1 {
+                color: $color-primary;
+                font-size: 36px;
+                font-weight: 500;
+                line-height: 51px;
+                margin: 10px 0 0 0;
+                @include mobile {
+                    font-size: 18px;
+                    line-height: 26px;
+                }
+            }
+            & p {
+                color: $color-primary;
+                font-size: 18px;
+                font-weight: 500;
+                line-height: 26px;
+                margin: 0 0 20px 0;
+                @include mobile {
+                    font-size: 14px;
+                    line-height: 20px;
+                    margin: 5px 0;
+                }
+            }
+            & .appart-tag {
+                background-color: $color-primary;
+                color: white;
+                padding: 5px 15px;
+                border-radius: 10px;
+                width: 115px;
+                height: 25px;
+                margin-right: 10px;
+                @include mobile {
+                    width: 84px;
+                    height: 18px;
+                    margin-right: 5px;
+                    font-size: 10px;
+                    line-height: 14px;
+                }
+            }
+        }
+    }
+    &__host {
+        width: 180px;
+
+        @include mobile {
+            margin-top: 10px;
+            width: 100%;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &-details {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+            align-items: center;
+            &-img {
+                width: 64px;
+                height: 64px;
+                border-radius: 50%;
+                margin-top: 5px;
+                @include mobile {
+                    width: 32px;
+                    height: 32px;
+                    margin: 0;
+                }
+            }
+            & p {
+                display: flex;
+                flex-direction: column;
+                text-align: end;
+                margin-right: 5px;
+                color: $color-primary;
+                font-size: 18px;
+                line-height: 26px;
+                @include mobile {
+                    font-size: 12px;
+                    line-height: 17px;
+                }
+            }
+        }
+        &-notation div {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            @include mobile {
+                margin: 0;
+            }
+        }
+    }
+}
