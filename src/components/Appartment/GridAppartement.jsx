@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function GridAppartement(props) {
     return (
         <section className="section__gridAppartement">
@@ -7,8 +9,14 @@ export default function GridAppartement(props) {
                         key={appart.id}
                         className="section__gridAppartement-cardAppart"
                     >
-                        <img src={appart.cover} alt={appart.title} />
-                        <h2>{appart.title}</h2>
+                        <Link
+                            to={{
+                                pathname: `/appartment/${appart.id}`,
+                            }}
+                        >
+                            <img src={appart.cover} alt={appart.title} />
+                            <h2>{appart.title}</h2>
+                        </Link>
                     </div>
                 ))}
         </section>

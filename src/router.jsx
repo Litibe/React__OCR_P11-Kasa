@@ -8,6 +8,7 @@ import Footer from './components/Footer/Footer.jsx';
 import Header from './components/Header/Header.jsx';
 import HomePage from './Pages/Home.jsx';
 import Error404 from './Pages/Error404.jsx';
+import Appartment from './Pages/Appartment.jsx';
 
 export default function Router() {
     const router = createBrowserRouter(
@@ -20,6 +21,17 @@ export default function Router() {
                         <>
                             <Header />
                             <HomePage />
+                            <Footer />
+                        </>
+                    }
+                />
+                <Route
+                    index
+                    path="/appartment/:idAppartment"
+                    element={
+                        <>
+                            <Header />
+                            <Appartment />
                             <Footer />
                         </>
                     }
