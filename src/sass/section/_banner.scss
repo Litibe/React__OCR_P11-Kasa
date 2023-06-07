@@ -1,47 +1,54 @@
 .banner {
-    &__top {
-        &-home {
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: 50% 50%;
-            transition: all ease-in-out 400ms;
-            background-image: url('../../assets/images/e270fc8fc902a1eb738458e7b29c1899.jpeg');
+    &__top-home {
+        max-width: 1240px;
+        margin-left: auto;
+        margin-right: auto;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-image: url('../../assets/images/e270fc8fc902a1eb738458e7b29c1899.jpeg');
+        transition: all ease-in-out 400ms;
+        height: 223px;
+        z-index: -1;
+        position: relative;
+        margin-top: 60px;
+        border-radius: 25px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        @include desktop {
+            max-width: calc(100% - 40px);
+            margin: 30px auto;
+        }
+        @include tab {
+            margin-top: 30px;
+            max-width: $widthComponentWithMargin;
+        }
+        @include mobile {
+            height: 111px;
+            justify-content: start;
+            margin-top: 0;
+            border-radius: 10px;
+        }
+        &::after {
+            content: '';
+            color: white;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
             height: 223px;
-            z-index: -1;
-            position: relative;
-            margin-top: 60px;
+            background: black;
+            opacity: 0.3;
             border-radius: 25px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            @include tab {
-                margin-top: 30px;
-                max-width: $widthComponentWithMargin;
-            }
+            z-index: 1;
+
             @include mobile {
                 height: 111px;
-                justify-content: start;
-                margin-top: 0;
-            }
-            &::after {
-                content: '';
-                color: white;
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                right: 0;
-                left: 0;
-                height: 223px;
-                background: black;
-                opacity: 0.3;
-                border-radius: 25px;
-                z-index: 1;
-
-                @include mobile {
-                    height: 111px;
-                }
+                border-radius: 10px;
             }
         }
     }
@@ -55,10 +62,15 @@ h1 {
     z-index: 2;
     width: fit-content;
     height: max-content;
+    @include tab {
+        font-size: 36px;
+        line-height: 42px;
+        width: 70%;
+    }
     @include mobile {
         font-size: 24px;
         line-height: 24px;
-        width: 65%;
+        width: 70%;
         margin-left: 16px;
     }
 }

@@ -4,6 +4,13 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-top: 40px;
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+    @include desktop {
+        max-width: calc(100% - 40px);
+        margin: 30px auto;
+    }
     @include mobile {
         margin: 20px auto;
     }
@@ -14,10 +21,7 @@ header {
     flex-direction: row;
     position: relative;
     right: 0;
-    @include tab {
-        margin: 20px;
-        right: 20px;
-    }
+
     &__link {
         color: $color-primary;
         font-size: 24px;

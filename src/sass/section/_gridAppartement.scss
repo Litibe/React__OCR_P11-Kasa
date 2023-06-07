@@ -1,8 +1,8 @@
 .section__gridAppartement {
-    margin: 40px 0;
-    padding: 50px 40px;
+    max-width: 1160px;
+    margin: 40px auto;
+    padding: 56px 40px;
     border-radius: 25px;
-    width: calc(100% - 80px);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 50px;
@@ -10,21 +10,22 @@
     transition: all ease-in-out 300ms;
 
     @include desktop {
+        max-width: calc(90% - 20px);
+        margin: 30px auto;
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        padding: 20px 0;
-        width: 100%;
+        gap: 40px;
     }
     @include tab {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        padding: 20px 0;
-        width: calc(100% - 40px);
+        max-width: calc(87% - 20px);
     }
     @include mobile {
         grid-template-columns: 1fr;
         background-color: transparent;
-        margin: 20px 0;
+        margin: 20px auto;
+        padding: 0;
+        max-width: calc(100% - 40px);
+        width: 100%;
+        gap: 20px;
     }
     &-cardAppart {
         margin: auto;
@@ -81,6 +82,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: calc(100% - 40px);
+    margin-left: auto;
+    margin-right: auto;
     @include tab {
         width: calc(100% - 40px);
     }
@@ -197,6 +201,63 @@
             @include mobile {
                 margin: 0;
             }
+        }
+    }
+    &__details {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: calc(100% - 40px);
+        margin: 0 auto;
+        padding: 0;
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+.accordion {
+    background-color: aquamarine;
+    width: 48%;
+    @include mobile {
+        width: 100%;
+    }
+    & h2 {
+        margin: 0 0 20px 0;
+        font-size: 18px;
+        font-weight: 500;
+        color: white;
+        width: calc(100% - 15px);
+        background-color: $color-primary;
+        line-height: 26px;
+        height: 52px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 10px;
+        padding-left: 15px;
+        z-index: 2;
+    }
+    & p {
+        width: 90%;
+        margin: 0;
+    }
+    & div {
+        display: flex;
+        flex-direction: column;
+        font-weight: 400;
+        color: $color-primary;
+        padding: 10px;
+        background-color: $color-secondary;
+        height: 250px;
+        transform: translateY(-22px);
+        border-radius: 10px;
+        line-height: 18px;
+        z-index: 1;
+        @include mobile {
+            font-size: 12px;
+            height: auto;
         }
     }
 }

@@ -4,9 +4,14 @@
     justify-content: space-around;
     align-items: center;
     height: max-content;
+    max-width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - 40px);
     @include tab {
         margin-top: 10px;
-        transform: translateX(-30px);
+        width: calc(100% - 20px);
+        transform: translateX(-10px);
     }
     @include mobile {
         width: 100%;

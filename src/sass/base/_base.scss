@@ -10,20 +10,15 @@ $widthComponentWithMargin: calc(100% - 2 * $marginBase);
 }
 body {
     margin: 0 auto;
-    max-width: 1240px;
-    width: 90%;
+    max-width: 1440px;
+    width: 100%;
     height: auto;
     font-family: 'Montserrat', sans-serif;
-
-    @include tab {
-        margin: $marginBase;
-        width: 100%;
-    }
 }
 
 .page_404 {
     text-align: center;
-    width: calc(90% - 40px);
+    width: calc(100% - 40px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,7 +26,6 @@ body {
     margin: auto;
     @include mobile {
         margin: auto;
-        transform: translateX(-20px);
     }
     & h1 {
         color: $color-primary;
