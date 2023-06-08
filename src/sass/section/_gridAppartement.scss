@@ -35,12 +35,6 @@
         height: 340px;
         position: relative;
         text-decoration: none;
-        background: rgb(2, 0, 36);
-        background: linear-gradient(
-            0deg,
-            rgba(2, 0, 36, 0.9951573849878934) 0%,
-            rgba(255, 255, 255, 0) 50%
-        );
         transition: all ease-in-out 300ms;
 
         @include mobile {
@@ -49,30 +43,52 @@
             margin: auto;
         }
         & img {
+            display: block;
             width: 100%;
             height: 100%;
             object-fit: cover;
             border-radius: 10px;
             transition: all ease-in-out 300ms;
             position: relative;
-            z-index: -1;
-            &:hover {
-                opacity: 0.3;
-            }
+        }
+
+        &::after {
+            content: '';
+            background: linear-gradient(
+                0deg,
+                rgba(2, 0, 36, 0.652) 0%,
+                rgba(255, 255, 255, 0) 50%
+            );
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            border-radius: 10px;
+        }
+        &:hover ::after {
+            background: linear-gradient(
+                0deg,
+                rgba(206, 130, 122, 0.696) 0%,
+                rgba(255, 255, 255, 0) 50%
+            );
         }
 
         & h2 {
             font-size: 18px;
             font-weight: 500;
             line-height: 26px;
-            transform: translateY(-90px);
             margin-left: 20px;
             color: white;
             width: fit-content;
-
-            &:hover {
-                color: $color-primary;
-            }
+            z-index: 2;
+            display: block;
+            position: absolute;
+            bottom: 5px;
+            width: 90%;
             &:link {
                 text-decoration: none;
             }
@@ -86,19 +102,17 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    max-width: 1240px;
     width: calc(100% - 40px);
     margin-left: auto;
     margin-right: auto;
-    @include tab {
-        width: calc(100% - 40px);
-    }
+
     @include mobile {
         flex-direction: column;
     }
 
     &__header {
         &-details {
-            background-color: aquamarine;
             width: 80%;
             & h1 {
                 color: $color-primary;
@@ -208,6 +222,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        max-width: 1240px;
         width: calc(100% - 40px);
         margin: 0 auto;
         padding: 0;
@@ -220,14 +235,18 @@
 
 .accordion {
     margin-top: 20px;
-    background-color: aquamarine;
     width: 48%;
+    height: min-content;
     @include mobile {
         width: 100%;
         margin-top: 15px;
     }
-    & h2 {
-        margin: 0 0 20px 0;
+    &__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: -20px 0 0 0;
         font-size: 18px;
         font-weight: 500;
         color: white;
@@ -235,32 +254,43 @@
         background-color: $color-primary;
         line-height: 26px;
         height: 52px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
         border-radius: 10px;
         padding-left: 15px;
-        z-index: 2;
+        transform: translateY(20px);
+        & h2 {
+            display: block;
+            font-weight: 500;
+        }
     }
-    & p {
-        width: 90%;
+    &__button {
+        display: block;
+        margin-right: 20px;
+        border: none;
+        background: transparent;
+        color: white;
+        font-size: 24px;
+    }
+    &-content {
         margin: 0;
-    }
-    & div {
         display: flex;
         flex-direction: column;
         font-weight: 400;
         color: $color-primary;
-        padding: 10px;
+        padding: 40px 20px 0px 20px;
         background-color: $color-secondary;
         height: 250px;
-        transform: translateY(-22px);
         border-radius: 10px;
-        line-height: 18px;
-        z-index: 1;
+        line-height: 26px;
+        z-index: -1;
         @include mobile {
             font-size: 12px;
             height: auto;
+            line-height: 18px;
+        }
+        & p {
+            display: block;
+            width: 90%;
+            margin: 0;
         }
     }
 }
