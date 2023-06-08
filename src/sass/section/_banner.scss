@@ -1,23 +1,26 @@
 .banner {
-    &__top-home {
-        max-width: 1240px;
-        margin-left: auto;
-        margin-right: auto;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        background-image: url('../../assets/images/e270fc8fc902a1eb738458e7b29c1899.jpeg');
-        transition: all ease-in-out 400ms;
-        height: 223px;
-        z-index: -1;
+    max-width: 1240px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all ease-in-out 400ms;
+    height: 223px;
+    position: relative;
+
+    &__title {
         position: relative;
-        margin-top: 60px;
+        left: 25%;
+        top: 0;
+        bottom: 0;
+        margin: -145px 0 0 0;
+    }
+    &__img {
         border-radius: 25px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
+        display: block;
         width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
         @include desktop {
             max-width: calc(100% - 40px);
             margin: 30px auto;
@@ -32,24 +35,29 @@
             margin-top: 0;
             border-radius: 10px;
         }
-        &::after {
-            content: '';
-            color: white;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            height: 223px;
-            background: black;
-            opacity: 0.3;
-            border-radius: 25px;
-            z-index: 1;
+    }
+    &::after {
+        content: '';
+        color: white;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: black;
+        opacity: 0.3;
+        border-radius: 25px;
+        z-index: 1;
+        @include desktop {
+            width: calc(100% - 40px);
+            margin-left: 20px;
+        }
 
-            @include mobile {
-                height: 111px;
-                border-radius: 10px;
-            }
+        @include mobile {
+            height: 111px;
+            border-radius: 10px;
         }
     }
 }

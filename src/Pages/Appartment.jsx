@@ -6,7 +6,7 @@ import Loading from '../components/Loading/Loading.jsx';
 import useFetchGetAppartment from '../utils/api/fetchAppartment.jsx';
 import NotationAppartement from '../components/Appartment/NotationAppartement.jsx';
 import Carrousel from '../components/Appartment/Carrousel.jsx';
-import Accordion from '../components/Appartment/Accordion.jsx';
+import Accordion from '../components/Accordion/Accordion.jsx';
 
 export default function Appartment() {
     const { dataAppartment, isLoadingAppartment } = useFetchGetAppartment();
@@ -70,14 +70,16 @@ export default function Appartment() {
                             </div>
                         </div>
                     </div>
-                    <div className="appart__details">
+                    <div className="accordion__appart">
                         <Accordion
                             title="Description"
                             listing={appartment.description}
+                            show={true}
                         />
                         <Accordion
                             title="Équipements"
                             listing={appartment.equipments}
+                            show={true}
                         />
                     </div>
                 </>

@@ -1,0 +1,100 @@
+.section__gridAppartement {
+    max-width: 1160px;
+    margin: 40px auto;
+    padding: 56px 40px;
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+    background-color: $bg__container;
+    transition: all ease-in-out 300ms;
+
+    @include desktop {
+        max-width: calc(90% - 20px);
+        margin: 30px auto;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    @include tab {
+        max-width: calc(87% - 20px);
+    }
+    @include mobile {
+        grid-template-columns: 1fr;
+        background-color: transparent;
+        margin: 20px auto;
+        padding: 0;
+        max-width: calc(100% - 40px);
+        width: 100%;
+        gap: 20px;
+    }
+    &-cardAppart {
+        margin: auto;
+        border-radius: 10px;
+        max-width: 340px;
+        width: 100%;
+        height: 340px;
+        position: relative;
+        text-decoration: none;
+        transition: all ease-in-out 300ms;
+
+        @include mobile {
+            max-width: 100%;
+            height: 255px;
+            margin: auto;
+        }
+        & img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: all ease-in-out 300ms;
+            position: relative;
+        }
+
+        &::after {
+            content: '';
+            background: linear-gradient(
+                0deg,
+                rgba(2, 0, 36, 0.652) 0%,
+                rgba(255, 255, 255, 0) 50%
+            );
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            border-radius: 10px;
+        }
+        &:hover ::after {
+            background: linear-gradient(
+                0deg,
+                rgba(206, 130, 122, 0.696) 0%,
+                rgba(255, 255, 255, 0) 50%
+            );
+        }
+
+        & h2 {
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 26px;
+            margin-left: 20px;
+            color: white;
+            width: fit-content;
+            z-index: 2;
+            display: block;
+            position: absolute;
+            bottom: 5px;
+            width: 90%;
+            &:link {
+                text-decoration: none;
+            }
+            &:active {
+                text-decoration: none;
+            }
+        }
+    }
+}
