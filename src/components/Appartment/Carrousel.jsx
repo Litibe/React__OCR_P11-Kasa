@@ -27,31 +27,31 @@ export default function Carrousel(props) {
     return (
         <>
             <div className="carroussel-content">
-                <div>
+                <div className="carroussel__navigation">
                     <button
-                        className="carroussel-button arrow-left"
+                        className="carroussel__navigation-button arrow-left"
                         aria-label="Boutton Flèche Gauche pour accéder à la Photo Précédente"
                         onClick={handleChangeLeft}
                     >
                         <strong className="fa-solid fa-chevron-left"></strong>
                     </button>
                     <button
-                        className="carroussel-button arrow-right"
+                        className="carroussel__navigation-button arrow-right"
                         aria-label="Boutton Flèche Droite pour accéder à la Photo Suivante"
                         onClick={handleChangeRight}
                     >
                         <strong className="fa-solid fa-chevron-right"></strong>
                     </button>
                 </div>
+                <span className="carroussel__pagination">
+                    {indexImg + 1}/{totalImg}
+                </span>
                 <img
                     src={imgToDisplay}
-                    className="appart__cover-banner"
+                    className="carroussel__cover"
                     alt={props.appartment.title}
                     loading="lazy"
                 />
-            </div>
-            <div className="pagination-carroussel">
-                {indexImg + 1}/{totalImg}
             </div>
         </>
     );

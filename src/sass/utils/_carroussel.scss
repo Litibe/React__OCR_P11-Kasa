@@ -1,71 +1,83 @@
-.carroussel-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    height: max-content;
-    max-width: 1240px;
-    margin-left: auto;
-    margin-right: auto;
-    width: calc(100% - 40px);
-    @include tab {
-        margin-top: 10px;
-        width: calc(100% - 20px);
-        transform: translateX(-10px);
+.carroussel {
+    &-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        max-width: 1240px;
+        margin: 10px auto;
+        @include desktop {
+            margin-left: 20px;
+            width: calc(100% - 40px);
+        }
     }
-    @include mobile {
+    &__navigation {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1220px;
+        width: 95%;
+        margin: auto;
+        position: absolute;
+        top: 310px;
+        @include tab {
+            top: 280px;
+        }
+        @include mobile {
+            top: 200px;
+            width: calc(100% - 60px);
+        }
+        &-button {
+            border: none;
+            background: transparent;
+            color: white;
+            width: min-content;
+            z-index: 2;
+            font-size: 46px;
+            cursor: pointer;
+            @include tab {
+                font-size: 36px;
+            }
+            @include mobile {
+                font-size: 20px;
+            }
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+    &__cover {
         width: 100%;
-        margin-top: 0;
-    }
-}
+        height: 415px;
+        border-radius: 25px;
+        object-fit: cover;
+        display: block;
+        margin: 0;
 
-.carroussel-button {
-    position: absolute;
-    top: 310px;
-    border: none;
-    background: transparent;
-    color: white;
-    width: min-content;
-    z-index: 2;
-    font-size: 46px;
-    margin-left: 15px;
-    cursor: pointer;
-    @include tab {
-        top: 160px;
-        font-size: 36px;
-        margin-left: 20px;
+        @include tab {
+            height: 350px;
+            border-radius: 10px;
+        }
+        @include mobile {
+            height: 255px;
+        }
     }
-    @include mobile {
-        top: 120px;
-        font-size: 20px;
-        margin-left: 20px;
-    }
-    &:hover {
-        color: $color-primary;
-    }
-}
-.arrow-right {
-    position: absolute;
-
-    right: 70px;
-    @include tab {
-        right: 15px;
-    }
-    @include mobile {
-        right: 10px;
-    }
-}
-
-.pagination-carroussel {
-    text-align: center;
-    width: min-content;
-    margin: auto;
-    color: white;
-    transform: translateY(-40px);
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 26px;
-    @include mobile {
-        transform: translate(-20px, -30px);
+    &__pagination {
+        text-align: center;
+        width: min-content;
+        color: white;
+        transform: translateY(180px);
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 26px;
+        z-index: 2;
+        position: absolute;
+        left: 50%;
+        @include tab {
+            transform: translateY(150px);
+        }
+        @include mobile {
+            display: none;
+        }
     }
 }

@@ -9,10 +9,10 @@ header {
     margin-right: auto;
     @include desktop {
         max-width: calc(100% - 40px);
-        margin: 30px auto;
+        margin: 30px auto 0 auto;
     }
     @include mobile {
-        margin: 20px auto;
+        margin: 20px auto 0 auto;
     }
 }
 
