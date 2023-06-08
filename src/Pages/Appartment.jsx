@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import GridAppartement from '../components/Appartment/GridAppartement.jsx';
-import Loading from '../components/Loading/Loading.jsx';
+import Error404 from './Error404.jsx';
 import useFetchGetAppartment from '../utils/api/fetchAppartment.jsx';
 import NotationAppartement from '../components/Appartment/NotationAppartement.jsx';
 import Carrousel from '../components/Appartment/Carrousel.jsx';
@@ -84,7 +84,7 @@ export default function Appartment() {
                     </div>
                 </>
             ) : (
-                <Loading />
+                <Error404 />
             )}
         </main>
     );
