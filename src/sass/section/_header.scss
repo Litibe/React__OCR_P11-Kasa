@@ -35,5 +35,8 @@ header {
         &:link {
             text-decoration: inherit;
         }
+        & .active {
+            text-decoration: underline;
+        }
     }
 }

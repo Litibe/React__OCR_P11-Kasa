@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import LogoKasa from '../LogoKasa/logoKasa.jsx';
 import LogoKasaSmall from '../LogoKasa/logoKasaSmall.jsx';
 
-export default function Header() {
+export default function Header(props) {
     const [screenSize, getDimension] = useState({
         dynamicWidth: window.innerWidth,
         dynamicHeight: window.innerHeight,
@@ -34,10 +34,18 @@ export default function Header() {
             </div>
             <nav className="nav">
                 <Link to="/" className="nav__link">
-                    Accueil
+                    {props.url === 'home' ? (
+                        <span className="active">Accueil</span>
+                    ) : (
+                        <span>Accueil</span>
+                    )}
                 </Link>
                 <Link to="/about" className="nav__link">
-                    A Propos
+                    {props.url === 'about' ? (
+                        <span className="active">A propos</span>
+                    ) : (
+                        <span>A propos</span>
+                    )}
                 </Link>
             </nav>
         </header>

@@ -20,7 +20,7 @@ export default function Router() {
                     path="/"
                     element={
                         <>
-                            <Header />
+                            <Header url={'home'} />
                             <HomePage />
                             <Footer />
                         </>
@@ -31,7 +31,7 @@ export default function Router() {
                     path="/about"
                     element={
                         <>
-                            <Header />
+                            <Header url={'about'} />
                             <AboutPage />
                             <Footer />
                         </>
