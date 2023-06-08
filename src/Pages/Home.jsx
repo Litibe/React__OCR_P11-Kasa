@@ -12,6 +12,7 @@ export default function HomePage() {
             <BannerTop
                 title={'Chez vous, partout et ailleurs'}
                 img={backgroundHome}
+                class={'banner'}
             />
             <main>
                 {isLoadingAppartment === false &&

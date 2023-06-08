@@ -94,7 +94,7 @@
         max-width: 1240px;
         margin: 30px auto;
         width: 80%;
-        @include desktop {
+        @include tab {
             width: calc(100% - 40px);
         }
     }

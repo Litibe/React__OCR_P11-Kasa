@@ -6,13 +6,36 @@
     transition: all ease-in-out 400ms;
     height: 223px;
     position: relative;
-
+    @include desktop {
+        max-width: calc(100% - 60px);
+        margin: 30px auto;
+    }
+    @include mobile {
+        height: 111px;
+        max-width: calc(100% - 40px);
+        border-radius: 10px;
+    }
     &__title {
         position: relative;
-        left: 25%;
-        top: 0;
-        bottom: 0;
-        margin: -145px 0 0 0;
+        margin: -140px auto 0 auto;
+        color: white;
+        font-weight: 500;
+        font-size: 48px;
+        line-height: 68.45px;
+        z-index: 2;
+        width: fit-content;
+        height: max-content;
+        @include tab {
+            font-size: 36px;
+            line-height: 42px;
+            margin: -130px auto 0 auto;
+        }
+        @include mobile {
+            font-size: 24px;
+            line-height: 24px;
+            width: 70%;
+            margin: -80px 0 0 15px;
+        }
     }
     &__img {
         border-radius: 25px;
@@ -21,18 +44,7 @@
         height: 100%;
         object-fit: cover;
         z-index: -1;
-        @include desktop {
-            max-width: calc(100% - 40px);
-            margin: 30px auto;
-        }
-        @include tab {
-            margin-top: 30px;
-            max-width: $widthComponentWithMargin;
-        }
         @include mobile {
-            height: 111px;
-            justify-content: start;
-            margin-top: 0;
             border-radius: 10px;
         }
     }
@@ -50,35 +62,23 @@
         opacity: 0.3;
         border-radius: 25px;
         z-index: 1;
-        @include desktop {
-            width: calc(100% - 40px);
-            margin-left: 20px;
-        }
 
         @include mobile {
             height: 111px;
             border-radius: 10px;
         }
     }
-}
-
-h1 {
-    color: white;
-    font-weight: 500;
-    font-size: 48px;
-    line-height: 68.45px;
-    z-index: 2;
-    width: fit-content;
-    height: max-content;
-    @include tab {
-        font-size: 36px;
-        line-height: 42px;
-        width: 70%;
-    }
-    @include mobile {
-        font-size: 24px;
-        line-height: 24px;
-        width: 70%;
-        margin-left: 16px;
+    &--about {
+        @extend .banner;
+        @include mobile {
+            height: 223px;
+            border-radius: 10px;
+        }
+        &::after {
+            @include mobile {
+                height: 223px;
+                border-radius: 10px;
+            }
+        }
     }
 }
