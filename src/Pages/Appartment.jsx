@@ -35,10 +35,13 @@ export default function Appartment() {
                         <div className="appart__header-details">
                             <h1>{appartment.title}</h1>
                             <p>{appartment.location}</p>
-                            <div>
+                            <div className="appart__tag">
                                 {appartment.tags !== undefined &&
                                     appartment.tags.map((tag) => (
-                                        <span className="appart-tag" key={tag}>
+                                        <span
+                                            className="appart__tag-span"
+                                            key={tag}
+                                        >
                                             {tag}
                                         </span>
                                     ))}

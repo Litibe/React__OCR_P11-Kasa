@@ -5,19 +5,16 @@ export default function GridAppartement(props) {
         <section className="section__gridAppartement">
             {props.data !== undefined &&
                 props.data.map((appart) => (
-                    <div
-                        key={appart.id}
+                    <Link
+                        to={{
+                            pathname: `/appartment/${appart.id}`,
+                        }}
                         className="section__gridAppartement-cardAppart"
+                        key={appart.id}
                     >
-                        <Link
-                            to={{
-                                pathname: `/appartment/${appart.id}`,
-                            }}
-                        >
-                            <img src={appart.cover} alt={appart.title} />
-                            <h2>{appart.title}</h2>
-                        </Link>
-                    </div>
+                        <img src={appart.cover} alt={appart.title} />
+                        <h2>{appart.title}</h2>
+                    </Link>
                 ))}
         </section>
     );
