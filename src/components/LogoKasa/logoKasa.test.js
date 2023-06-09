@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react';
-import Footer from './Footer.jsx';
+import LogoKasa from './logoKasa.jsx';
 
-describe('Footer', () => {
+describe('LogoKasa', () => {
     test('Should render without crash', async () => {
-        render(<Footer />);
+        render(<LogoKasa />);
     });
 });

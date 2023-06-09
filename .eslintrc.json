@@ -6,9 +6,20 @@
     },
     "extends": "airbnb-base",
     "overrides": [],
+    "parser": "@babel/eslint-parser",
     "parserOptions": {
-        "ecmaVersion": "latest"
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules": true,
+            "experimentalObjectRestSpread": true
+        },
+        "babelOptions": {
+            "presets": ["@babel/preset-react"]
+        }
     },
+    "plugins": ["react"],
     "rules": {
         "no-underscore-dangle": "off",
         "no-unused-vars": "off",

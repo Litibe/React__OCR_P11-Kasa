@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import About from './About.jsx';
+import Error404 from './Error404.jsx';
 
-describe('About', () => {
+describe('Error404', () => {
     test('Should render without crash', async () => {
         const noop = () => {};
         Object.defineProperty(window, 'scrollTo', {
@@ -11,7 +11,7 @@ describe('About', () => {
         });
         render(
             <MemoryRouter>
-                <About />
+                <Error404 />
             </MemoryRouter>
         );
     });

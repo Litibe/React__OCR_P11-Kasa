@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import GridAppartement from '../components/Appartment/GridAppartement.jsx';
 import Error404 from './Error404.jsx';
 import useFetchGetAppartment from '../utils/api/fetchAppartment.jsx';
 import NotationAppartement from '../components/Appartment/NotationAppartement.jsx';
@@ -9,7 +8,7 @@ import Carrousel from '../components/Appartment/Carrousel.jsx';
 import Accordion from '../components/Accordion/Accordion.jsx';
 
 export default function Appartment() {
-    const { dataAppartment, isLoadingAppartment } = useFetchGetAppartment();
+    const { dataAppartment } = useFetchGetAppartment();
     const [appartment, setAppartment] = useState(undefined);
     const { idAppartment } = useParams();
     useEffect(() => {

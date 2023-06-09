@@ -32,6 +32,7 @@ export default function Carrousel(props) {
                         className="carroussel__navigation-button arrow-left"
                         aria-label="Boutton Flèche Gauche pour accéder à la Photo Précédente"
                         onClick={handleChangeLeft}
+                        data-testid="carroussel__navigation-button-left"
                     >
                         <strong className="fa-solid fa-chevron-left"></strong>
                     </button>
@@ -39,6 +40,7 @@ export default function Carrousel(props) {
                         className="carroussel__navigation-button arrow-right"
                         aria-label="Boutton Flèche Droite pour accéder à la Photo Suivante"
                         onClick={handleChangeRight}
+                        data-testid="carroussel__navigation-button-right"
                     >
                         <strong className="fa-solid fa-chevron-right"></strong>
                     </button>

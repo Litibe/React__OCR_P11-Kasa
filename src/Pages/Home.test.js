@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
-import Home from './Home.jsx';
 import { MemoryRouter } from 'react-router-dom';
+import Home from './Home.jsx';
 
 describe('Home', () => {
     test('Should render without crash', async () => {

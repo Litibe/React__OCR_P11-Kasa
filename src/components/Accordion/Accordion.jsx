@@ -23,6 +23,7 @@ export default function Accordion(props) {
         <div className="accordion">
             <div
                 className="accordion__header"
+                data-testid="accordion__header"
                 onClick={(e) => handleChangeStatut(e)}
             >
                 <h2>{props.title}</h2>

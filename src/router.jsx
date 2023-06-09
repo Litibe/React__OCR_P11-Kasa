@@ -27,7 +27,6 @@ export default function Router() {
                     }
                 />
                 <Route
-                    index
                     path="/about"
                     element={
                         <>
@@ -38,7 +37,6 @@ export default function Router() {
                     }
                 />
                 <Route
-                    index
                     path="/appartment/:idAppartment"
                     element={
                         <>

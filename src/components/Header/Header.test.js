@@ -1,6 +1,6 @@
-import Header from './Header.jsx';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
+import Header from './Header.jsx';
 
 describe('Header', () => {
     test('Should render without crash', async () => {
