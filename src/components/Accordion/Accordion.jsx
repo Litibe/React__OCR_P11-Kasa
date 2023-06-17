@@ -2,14 +2,7 @@ import { useEffect, useState } from 'react';
 
 export default function Accordion(props) {
     const [show, setShow] = useState(props.show);
-    const divStyleOpen = {
-        padding: '30px 20px 20px 20px',
-        height: '70%',
-    };
-    const divStyleClose = {
-        padding: '0',
-        height: '0',
-    };
+
     const divArrowOpen = {
         transform: 'rotate(0)',
     };
@@ -19,6 +12,16 @@ export default function Accordion(props) {
     const handleChangeStatut = (e) => {
         setShow(!show);
     };
+
+    useEffect(() => {
+        if (show === true) {
+            const accordionContent = document.getElementById(props.title);
+            accordionContent.classList.remove('accordion-content-none');
+        } else {
+            const accordionContent = document.getElementById(props.title);
+            accordionContent.classList.add('accordion-content-none');
+        }
+    }, [show]);
     return (
         <div className="accordion">
             <div
@@ -35,10 +38,7 @@ export default function Accordion(props) {
                 </button>
             </div>
 
-            <div
-                className="accordion-content"
-                style={show === true ? divStyleOpen : divStyleClose}
-            >
+            <div className="accordion-content" id={props.title}>
                 {typeof props.listing === 'object' ? (
                     props.listing.map((element) => (
                         <span key={element}>{element}</span>

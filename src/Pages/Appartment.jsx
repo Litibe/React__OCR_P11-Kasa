@@ -73,12 +73,12 @@ export default function Appartment() {
                         <Accordion
                             title="Description"
                             listing={appartment.description}
-                            show={true}
+                            show={false}
                         />
                         <Accordion
                             title="Équipements"
                             listing={appartment.equipments}
-                            show={true}
+                            show={false}
                         />
                     </div>
                 </>

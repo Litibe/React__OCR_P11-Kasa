@@ -27,27 +27,31 @@ export default function Carrousel(props) {
     return (
         <>
             <div className="carroussel-content">
-                <div className="carroussel__navigation">
-                    <button
-                        className="carroussel__navigation-button arrow-left"
-                        aria-label="Boutton Flèche Gauche pour accéder à la Photo Précédente"
-                        onClick={handleChangeLeft}
-                        data-testid="carroussel__navigation-button-left"
-                    >
-                        <strong className="fa-solid fa-chevron-left"></strong>
-                    </button>
-                    <button
-                        className="carroussel__navigation-button arrow-right"
-                        aria-label="Boutton Flèche Droite pour accéder à la Photo Suivante"
-                        onClick={handleChangeRight}
-                        data-testid="carroussel__navigation-button-right"
-                    >
-                        <strong className="fa-solid fa-chevron-right"></strong>
-                    </button>
-                </div>
-                <span className="carroussel__pagination">
-                    {indexImg + 1}/{totalImg}
-                </span>
+                {totalImg > 2 && (
+                    <>
+                        <div className="carroussel__navigation">
+                            <button
+                                className="carroussel__navigation-button arrow-left"
+                                aria-label="Boutton Flèche Gauche pour accéder à la Photo Précédente"
+                                onClick={handleChangeLeft}
+                                data-testid="carroussel__navigation-button-left"
+                            >
+                                <strong className="fa-solid fa-chevron-left"></strong>
+                            </button>
+                            <button
+                                className="carroussel__navigation-button arrow-right"
+                                aria-label="Boutton Flèche Droite pour accéder à la Photo Suivante"
+                                onClick={handleChangeRight}
+                                data-testid="carroussel__navigation-button-right"
+                            >
+                                <strong className="fa-solid fa-chevron-right"></strong>
+                            </button>
+                        </div>
+                        <span className="carroussel__pagination">
+                            {indexImg + 1}/{totalImg}
+                        </span>{' '}
+                    </>
+                )}
                 <img
                     src={imgToDisplay}
                     className="carroussel__cover"
