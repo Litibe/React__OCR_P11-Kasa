@@ -16,8 +16,8 @@ export default function AboutPage() {
     return (
         <>
             <BannerTop img={backgroundAbout} class="banner--about" />
-            <h1 className="d-none">A propos</h1>
             <main className="accordion__about">
+                <h1 className="d-none">A propos</h1>
                 <Accordion title="Fiabilité" listing={fiabilité} />
                 <Accordion title="Respect" listing={respect} />
                 <Accordion title="Service" listing={service} />

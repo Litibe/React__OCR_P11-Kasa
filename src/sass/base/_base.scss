@@ -30,9 +30,8 @@ body {
     & h1 {
         color: $color-primary;
         font-size: 288px;
-        margin: 30px;
+        margin: 100px auto 30px auto;
         font-weight: 700;
-        line-height: 410px;
         @include desktop {
             font-size: 200px;
         }
@@ -43,6 +42,7 @@ body {
         @include mobile {
             font-size: 96px;
             line-height: 138px;
+            margin-top: 130px;
         }
     }
     & p {
@@ -56,6 +56,7 @@ body {
         @include mobile {
             font-size: 18px;
             line-height: 26px;
+            margin-top: -30px;
             margin-bottom: 80px;
         }
     }
@@ -64,11 +65,11 @@ body {
         font-size: 18px;
         line-height: 26px;
         font-weight: 500;
-        margin-bottom: 100px;
+        margin: 140px auto;
         @include mobile {
             font-size: 14px;
             line-height: 20px;
-            margin-bottom: 80px;
+            margin: 50px auto;
         }
     }
 }

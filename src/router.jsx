@@ -52,7 +52,6 @@ export default function Router() {
                         <>
                             <Header />
                             <Error404 />
-                            <Footer />
                         </>
                     }
                 />
